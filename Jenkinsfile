@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git https://github.com/mouryayi/cicd-pipeline-train-schedule-cd/
+                git https://github.com/jenkinsci/last-changes-plugin
                 lastChanges format: 'SIDE', matchWordsThreshold: '0.25', matching: 'NONE', matchingMaxComparisons: '1000', showFiles: true, since: 'PREVIOUS_REVISION', specificBuild: '', specificRevision: '', synchronisedScroll: true, vcsDir: ''
                 echo 'Running build automation'
                 sh './gradlew build --no-daemon'
