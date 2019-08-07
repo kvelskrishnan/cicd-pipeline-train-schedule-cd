@@ -3,7 +3,6 @@ pipeline {
     stages {
         stage('Last Changes') {
             steps {
-                lastChanges format:'SIDE'
                  script {
                   def publisher = LastChanges.getLastChangesPublisher "PREVIOUS_REVISION", "SIDE", "LINE", true, true, "", "", "", "", ""
                   publisher.publishLastChanges()
@@ -15,7 +14,7 @@ pipeline {
                       mimeType: 'text/html',
                       body: """<p>See attached diff of build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b>.</p>
                         <p>Check build changes on Jenkins <b><a href="${env.BUILD_URL}/last-changes">here</a></b>.</p>""",
-                      to: "myalamanchili@horizon.csueastbay.edu" )
+                      to: "mouryayalamanchili9@gmail.com" )
                 } //end script
             }
         }
