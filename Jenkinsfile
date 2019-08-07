@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/jenkinsci/last-changes-plugin.git'
+                git 'https://github.com/mouryayi/cicd-pipeline-train-schedule-cd'
                 lastChanges format:'SIDE'
             }
         }
