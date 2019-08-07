@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+            steps {
+                git 'https://github.com/mouryayi/cicd-pipeline-train-schedule-cd'
+                lastChanges format:'SIDE'
+            }
         stage('Build') {
             steps {
                 echo 'Running build automation'
