@@ -4,7 +4,7 @@ pipeline {
         stage('Last Changes') {
             steps {
                 git 'https://github.com/mouryayi/cicd-pipeline-train-schedule-cd'
-                lastChanges since: 'LAST_SUCCESSFUL_BUILD', format:'SIDE',matching: 'LINE'
+                lastChanges since: 'PREVIOUS_REVISION', format:'SIDE',matching: 'LINE'
             }
         }
         stage('Build') {
