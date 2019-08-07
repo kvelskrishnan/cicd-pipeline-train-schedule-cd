@@ -28,7 +28,7 @@ pipeline {
                                     sshTransfer(
                                         sourceFiles: 'dist/trainSchedule.zip',
                                         removePrefix: 'dist/',
-                                        remoteDirectory: '/var'
+                                        remoteDirectory: '/tmp/new'
                                     )
                                 ]
                             )
