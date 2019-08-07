@@ -3,8 +3,7 @@ pipeline {
     stages {
         stage('Last Changes') {
             steps {
-                git 'https://github.com/mouryayi/cicd-pipeline-train-schedule-cd'
-                lastChanges format:'SIDE',matching: 'WORD', specificRevision: "${REV}"
+                lastChanges format:'SIDE'
             }
         }
         stage('Build') {
