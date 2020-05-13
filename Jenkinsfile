@@ -14,7 +14,7 @@ pipeline {
                       mimeType: 'text/html',
                       body: """<p>See attached diff of build <b>${env.JOB_NAME} #${env.BUILD_NUMBER}</b>.</p>
                         <p>Check build changes on Jenkins <b><a href="${env.BUILD_URL}/last-changes">here</a></b>.</p>""",
-                      to: "mouryayalamanchili9@gmail.com" )
+                      to: "kathir29994@gmail.com" )
                 } //end script
             }
         }
@@ -56,7 +56,7 @@ pipeline {
         }
         stage('DeployToStaging') {
             when {
-                branch 'release'
+                branch 'master'
             }
             steps {
                 input 'Does the dev environment look OK?'
