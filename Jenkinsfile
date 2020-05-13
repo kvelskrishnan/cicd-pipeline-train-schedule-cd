@@ -27,7 +27,7 @@ pipeline {
         }
       stage('DeployTodev') {
             when {
-                branch 'devops'
+                branch 'master'
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'USERNAME', passwordVariable: 'USERPASS')]) {
